@@ -1,0 +1,20 @@
+{
+    "name": "luxio/http-message",
+    "type": "library",
+    "authors": [
+        {
+            "name": "SaudQureshi",
+            "email": "saudken52@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Luxio\\Http\\": "src/",
+            "Luxio\\Http\\Providers\\": "providers/",
+            "Luxio\\Support\\Facades\\": "facades/"
+        }
+    },
+    "require": {
+        "psr/http-message": "^1.0"
+    }
+}
