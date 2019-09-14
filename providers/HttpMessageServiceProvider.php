@@ -1,6 +1,6 @@
 <?php
 
-namespace Luxio\Http\Providers;
+namespace Luxio\Providers;
 
 use Luxio\Http\Request;
 use Luxio\Http\Response;

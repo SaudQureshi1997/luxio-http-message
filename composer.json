@@ -10,7 +10,7 @@
     "autoload": {
         "psr-4": {
             "Luxio\\Http\\": "src/",
-            "Luxio\\Http\\Providers\\": "providers/",
+            "Luxio\\Providers\\": "providers/",
             "Luxio\\Support\\Facades\\": "facades/"
         }
     }
