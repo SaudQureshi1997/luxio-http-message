@@ -13,8 +13,5 @@
             "Luxio\\Http\\Providers\\": "providers/",
             "Luxio\\Support\\Facades\\": "facades/"
         }
-    },
-    "require": {
-        "psr/http-message": "^1.0"
     }
 }
