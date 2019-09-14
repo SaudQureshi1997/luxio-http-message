@@ -1,6 +1,6 @@
 <?php
 
-namespace elphis\Http;
+namespace Elphis\Http;
 
 use Swoole\Http\Response as SwooleResponse;
 

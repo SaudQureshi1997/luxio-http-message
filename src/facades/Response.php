@@ -1,9 +1,9 @@
 <?php
 
-namespace elphis\Support\Facades;
+namespace Elphis\Support\Facades;
 
-use elphis\Support\Facades\Facade;
-use elphis\Http\Response as elphisResponse;
+use Elphis\Support\Facades\Facade;
+use Elphis\Http\Response as elphisResponse;
 
 class Response extends Facade
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace elphis\Http;
+namespace Elphis\Http;
 
 class Request
 {

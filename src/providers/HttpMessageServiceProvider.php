@@ -1,10 +1,10 @@
 <?php
 
-namespace elphis\Providers;
+namespace Elphis\Providers;
 
-use elphis\Http\Request;
-use elphis\Http\Response;
-use elphis\Providers\ServiceProvider;
+use Elphis\Http\Request;
+use Elphis\Http\Response;
+use Elphis\Providers\ServiceProvider;
 use Swoole\Http\Request as SwooleRequest;
 
 class HttpMessageServiceProvider extends ServiceProvider
