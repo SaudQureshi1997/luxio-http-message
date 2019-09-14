@@ -1,6 +1,6 @@
 <?php
 
-namespace Luxio\Http;
+namespace elphis\Http;
 
 class Request
 {
@@ -9,14 +9,14 @@ class Request
      *
      * @var array
      */
-    protected $query;
+    protected $get = [];
 
     /**
      * stres post data of the request
      *
      * @var array
      */
-    protected $post;
+    protected $post = [];
 
     /**
      * stores raw content of the request
@@ -30,14 +30,14 @@ class Request
      *
      * @var array
      */
-    protected $headers;
+    protected $headers = [];
 
     /**
      * strores the parsed body of the request
      *
      * @var array
      */
-    protected $parsedBody;
+    protected $parsedBody = [];
 
     /**
      * stores cookies of the request
@@ -126,7 +126,12 @@ class Request
      */
     public function all()
     {
-        return array_merge($this->query, $this->post, $this->parsedBody);
+        $body = array_merge($this->get, $this->post, $this->parsedBody);
+
+        if (!$body)
+            $body = [];
+
+        return $body;
     }
 
     /**
@@ -176,7 +181,7 @@ class Request
     protected function setHeaders(array $headers)
     {
         $headers = [];
-        foreach ($this->server as $key => $value) {
+        foreach ($this->headers as $key => $value) {
 
             if (stripos($key, 'HTTP_') !== FALSE) {
 

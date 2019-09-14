@@ -1,5 +1,5 @@
 {
-    "name": "luxio/http-message",
+    "name": "elphis/http-message",
     "type": "library",
     "authors": [
         {
@@ -9,9 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Luxio\\Http\\": "src/",
-            "Luxio\\Providers\\": "providers/",
-            "Luxio\\Support\\Facades\\": "facades/"
+            "elphis\\": "src/"
         }
     }
 }
