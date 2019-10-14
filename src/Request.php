@@ -63,7 +63,7 @@ class Request
      */
     public function expectsJson()
     {
-        return $this->header('Accept') === 'application/json';
+        return $this->header('Accept') === 'application/json' || $this->contentType() === 'application/json';
     }
 
 
@@ -78,10 +78,10 @@ class Request
         if ($this->parsedBody or $this->rawContent == null)
             return $this->parsedBody;
 
-        if ($this->getContentType() == 'application/json')
+        if ($this->contentType() == 'application/json')
             $this->parsedBody = json_decode($this->rawContent, true);
 
-        elseif ($this->getContentType() == 'application/x-www-formurlencoded')
+        elseif ($this->contentType() == 'application/x-www-formurlencoded')
             $this->parsedBody = parse_str($this->rawContent);
 
         return $this->parsedBody;
@@ -215,5 +215,49 @@ class Request
     public function header(string $key)
     {
         return $this->headers[$key];
+    }
+
+    /**
+     * get request IP
+     *
+     * @return string
+     */
+    public function ip()
+    {
+        return $this->header('REMOTE_ADDRESS');
+    }
+
+    /**
+     * get selected values only from the request
+     *
+     * @param array $names
+     * @return array
+     */
+    public function only(array $names)
+    {
+        $data = $this->all();
+
+        return array_filter(array_keys($data), function ($key) use ($names, $data) {
+            if (in_array($key, $names)) {
+                return $data[$key];
+            }
+        });
+    }
+
+    /**
+     * get all values from request except selected
+     *
+     * @param array $names
+     * @return array
+     */
+    public function except(array $names)
+    {
+        $data = $this->all();
+
+        return array_filter(array_keys($data), function ($key) use ($names, $data) {
+            if (!in_array($key, $names)) {
+                return $data[$key];
+            }
+        });
     }
 }
