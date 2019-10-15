@@ -1,15 +1,25 @@
 {
     "name": "elphis/http-message",
+    "description": "Laravel Inspired Http Messages for Elphis",
     "type": "library",
     "authors": [
         {
-            "name": "SaudQureshi",
+            "name": "Saud Qureshi",
             "email": "saudken52@gmail.com"
+        },
+        {
+            "name": "Akshay Khale",
+            "email": "akshaykhale@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
             "Elphis\\": "src/"
         }
-    }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-swoole": ">=2.0" 
+    },
+    "license": "MIT"
 }
